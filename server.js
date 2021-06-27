@@ -49,10 +49,10 @@ app.post("/api/notes", function(req, res) {
 app.get("/notes", function(res) {
     res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
-app.get("*", function(req, res) {
+app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 });
-app.get("/api/notes", function(req, res) {
+app.get("/api/notes", function(res) {
     return res.sendFile(path.json(__dirname, "./db/db.json"));
 });
 app.listen(PORT, function() {
